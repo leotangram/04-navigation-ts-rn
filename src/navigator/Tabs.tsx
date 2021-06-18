@@ -6,6 +6,7 @@ import Tab1Screen from '../screens/Tab1Screen'
 import Tab2Screen from '../screens/Tab2Screen'
 import StackNavigator from './StackNavigator'
 import { colors } from '../theme/appTheme'
+import TopTabNavigator from './TopTabNavigator'
 
 const Tabs = () => {
   return Platform.OS === 'ios' ? <TabsIOS /> : <TabsAndroid />
@@ -27,7 +28,7 @@ const TabsAndroid = () => {
             case 'Tab1Screen':
               iconName = 'T1'
               break
-            case 'Tab2Screen':
+            case 'TopTabNavigator':
               iconName = 'T2'
               break
             case 'StackNavigator':
@@ -44,8 +45,8 @@ const TabsAndroid = () => {
         options={{ title: 'Tab1' }}
       />
       <BottomTabAndroid.Screen
-        name="Tab2Screen"
-        component={Tab2Screen}
+        name="TopTabNavigator"
+        component={TopTabNavigator}
         options={{ title: 'Tab2' }}
       />
       <BottomTabAndroid.Screen
@@ -83,7 +84,7 @@ const TabsIOS = () => {
             case 'Tab1Screen':
               iconName = 'T1'
               break
-            case 'Tab2Screen':
+            case 'TopTabNavigator':
               iconName = 'T2'
               break
             case 'StackNavigator':
@@ -110,8 +111,8 @@ const TabsIOS = () => {
         }}
       />
       <BottomTabIOS.Screen
-        name="Tab2Screen"
-        component={Tab2Screen}
+        name="TopTabNavigator"
+        component={TopTabNavigator}
         options={{ title: 'Tab2' }}
       />
       <BottomTabIOS.Screen
