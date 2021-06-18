@@ -5,7 +5,13 @@ import {
   DrawerContentOptions,
   DrawerContentScrollView
 } from '@react-navigation/drawer'
-import { Image, useWindowDimensions, View } from 'react-native'
+import {
+  Image,
+  useWindowDimensions,
+  View,
+  TouchableOpacity,
+  Text
+} from 'react-native'
 import { styles } from '../theme/appTheme'
 import StackNavigator from './StackNavigator'
 import SettingsScreen from '../screens/SettingsScreen'
@@ -28,18 +34,33 @@ const LateralMenu = () => {
 
 export default LateralMenu
 
-const InternalMenu: FC<DrawerContentComponentProps<DrawerContentOptions>> =
-  () => {
-    return (
-      <DrawerContentScrollView>
-        <View style={styles.avatarContainer}>
-          <Image
-            source={{
-              uri: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
-            }}
-            style={styles.avatar}
-          />
-        </View>
-      </DrawerContentScrollView>
-    )
-  }
+const InternalMenu: FC<DrawerContentComponentProps<DrawerContentOptions>> = ({
+  navigation
+}) => {
+  return (
+    <DrawerContentScrollView>
+      <View style={styles.avatarContainer}>
+        <Image
+          source={{
+            uri: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
+          }}
+          style={styles.avatar}
+        />
+      </View>
+      <View style={styles.menuContainer}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('StackNavigator')}
+          style={styles.menuButton}
+        >
+          <Text style={styles.menuItem}>Navigation Stack</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('SettingsScreen')}
+          style={styles.menuButton}
+        >
+          <Text style={styles.menuItem}>Settings</Text>
+        </TouchableOpacity>
+      </View>
+    </DrawerContentScrollView>
+  )
+}
