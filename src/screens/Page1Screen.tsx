@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Button, Text, View } from 'react-native'
+import { Button, Text, TouchableOpacity, View } from 'react-native'
 import { StackScreenProps } from '@react-navigation/stack'
 import { styles } from '../theme/appTheme'
 
@@ -13,6 +13,16 @@ const Page1Screen: FC<Page1ScreenProps> = ({ navigation }) => {
         title="Page 2"
         onPress={() => navigation.navigate('Page2Screen')}
       />
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate('PersonScreen', {
+            id: 1,
+            name: 'Peter'
+          })
+        }
+      >
+        <Text>Navigate with arguments</Text>
+      </TouchableOpacity>
     </View>
   )
 }
