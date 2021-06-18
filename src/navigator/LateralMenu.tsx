@@ -12,9 +12,10 @@ import {
   TouchableOpacity,
   Text
 } from 'react-native'
-import { styles } from '../theme/appTheme'
+import { styles, colors } from '../theme/appTheme'
 import SettingsScreen from '../screens/SettingsScreen'
 import Tabs from './Tabs'
+import Icon from 'react-native-vector-icons/Ionicons'
 
 const Drawer = createDrawerNavigator()
 
@@ -50,14 +51,16 @@ const InternalMenu: FC<DrawerContentComponentProps<DrawerContentOptions>> = ({
       <View style={styles.menuContainer}>
         <TouchableOpacity
           onPress={() => navigation.navigate('StackNavigator')}
-          style={styles.menuButton}
+          style={{ ...styles.menuButton, flexDirection: 'row' }}
         >
-          <Text style={styles.menuItem}>Navigation Stack</Text>
+          <Icon name="compass-outline" size={23} color={colors.primary} />
+          <Text style={styles.menuItem}> Navigation Stack</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => navigation.navigate('SettingsScreen')}
-          style={styles.menuButton}
+          style={{ ...styles.menuButton, flexDirection: 'row' }}
         >
+          <Icon name="cog-outline" size={23} color={colors.primary} />
           <Text style={styles.menuItem}>Settings</Text>
         </TouchableOpacity>
       </View>

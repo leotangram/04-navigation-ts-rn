@@ -1,7 +1,8 @@
 import React, { FC, useEffect } from 'react'
 import { Button, Text, TouchableOpacity, View } from 'react-native'
 import { DrawerScreenProps } from '@react-navigation/drawer'
-import { styles } from '../theme/appTheme'
+import { styles, colors } from '../theme/appTheme'
+import Icon from 'react-native-vector-icons/Ionicons'
 
 interface Page1ScreenProps extends DrawerScreenProps<any, any> {}
 
@@ -9,7 +10,13 @@ const Page1Screen: FC<Page1ScreenProps> = ({ navigation }) => {
   useEffect(() => {
     navigation.setOptions({
       headerLeft: () => (
-        <Button onPress={() => navigation.toggleDrawer()} title="Menu" />
+        // <Button onPress={() => navigation.toggleDrawer()} title="Menu" />
+        <TouchableOpacity
+          onPress={() => navigation.toggleDrawer()}
+          style={{ marginLeft: 10 }}
+        >
+          <Icon name="menu-outline" size={35} color={colors.primary} />
+        </TouchableOpacity>
       )
     })
   }, [])
@@ -34,7 +41,8 @@ const Page1Screen: FC<Page1ScreenProps> = ({ navigation }) => {
           }
           style={{ ...styles.bigButton, backgroundColor: '#5856d6' }}
         >
-          <Text style={styles.bigButtonText}>Navigate with arguments</Text>
+          <Icon name="body-outline" size={35} color="#ffffff" />
+          <Text style={styles.bigButtonText}>Pedro</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() =>
@@ -45,6 +53,7 @@ const Page1Screen: FC<Page1ScreenProps> = ({ navigation }) => {
           }
           style={{ ...styles.bigButton, backgroundColor: '#ff9427' }}
         >
+          <Icon name="woman-outline" size={35} color="#ffffff" />
           <Text style={styles.bigButtonText}>María</Text>
         </TouchableOpacity>
       </View>

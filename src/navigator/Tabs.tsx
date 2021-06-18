@@ -7,6 +7,7 @@ import Tab2Screen from '../screens/Tab2Screen'
 import StackNavigator from './StackNavigator'
 import { colors } from '../theme/appTheme'
 import TopTabNavigator from './TopTabNavigator'
+import Icon from 'react-native-vector-icons/Ionicons'
 
 const Tabs = () => {
   return Platform.OS === 'ios' ? <TabsIOS /> : <TabsAndroid />
@@ -23,19 +24,19 @@ const TabsAndroid = () => {
       sceneAnimationEnabled
       screenOptions={({ route }) => ({
         tabBarIcon: ({ color, focused }) => {
-          let iconName: string = '1'
+          let iconName: string = ''
           switch (route.name) {
             case 'Tab1Screen':
-              iconName = 'T1'
+              iconName = 'bandage-outline'
               break
             case 'TopTabNavigator':
-              iconName = 'T2'
+              iconName = 'basketball-outline'
               break
             case 'StackNavigator':
-              iconName = 'ST'
+              iconName = 'bookmarks-outline'
               break
           }
-          return <Text style={{ color }}>{iconName}</Text>
+          return <Icon name={iconName} size={20} color={color} />
         }
       })}
     >
@@ -79,19 +80,19 @@ const TabsIOS = () => {
       }}
       screenOptions={({ route }) => ({
         tabBarIcon: ({ color, focused, size }) => {
-          let iconName: string = '1'
+          let iconName: string = ''
           switch (route.name) {
             case 'Tab1Screen':
-              iconName = 'T1'
+              iconName = 'bandage-outline'
               break
             case 'TopTabNavigator':
-              iconName = 'T2'
+              iconName = 'basketball-outline'
               break
             case 'StackNavigator':
-              iconName = 'ST'
+              iconName = 'bookmarks-outline'
               break
           }
-          return <Text style={{ color }}>{iconName}</Text>
+          return <Icon name={iconName} size={20} color={color} />
         }
       })}
     >
