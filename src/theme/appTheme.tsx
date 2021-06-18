@@ -7,5 +7,20 @@ export const styles = StyleSheet.create({
   title: {
     fontSize: 30,
     marginBottom: 10
+  },
+  bigButton: {
+    alignItems: 'center',
+    backgroundColor: 'red',
+    borderRadius: 20,
+    height: 100,
+    justifyContent: 'center',
+    marginRight: 10,
+    width: 100
+  },
+  bigButtonText: {
+    textAlign: 'center',
+    color: '#ffffff',
+    fontSize: 18,
+    fontWeight: 'bold'
   }
 })

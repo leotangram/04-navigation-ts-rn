@@ -13,16 +13,30 @@ const Page1Screen: FC<Page1ScreenProps> = ({ navigation }) => {
         title="Page 2"
         onPress={() => navigation.navigate('Page2Screen')}
       />
-      <TouchableOpacity
-        onPress={() =>
-          navigation.navigate('PersonScreen', {
-            id: 1,
-            name: 'Peter'
-          })
-        }
-      >
-        <Text>Navigate with arguments</Text>
-      </TouchableOpacity>
+      <View style={{ flexDirection: 'row' }}>
+        <TouchableOpacity
+          onPress={() =>
+            navigation.navigate('PersonScreen', {
+              id: 1,
+              name: 'Peter'
+            })
+          }
+          style={{ ...styles.bigButton, backgroundColor: '#5856d6' }}
+        >
+          <Text style={styles.bigButtonText}>Navigate with arguments</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() =>
+            navigation.navigate('PersonScreen', {
+              id: 2,
+              name: 'María'
+            })
+          }
+          style={{ ...styles.bigButton, backgroundColor: '#ff9427' }}
+        >
+          <Text style={styles.bigButtonText}>María</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   )
 }
