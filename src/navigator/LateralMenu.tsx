@@ -13,8 +13,8 @@ import {
   Text
 } from 'react-native'
 import { styles } from '../theme/appTheme'
-import StackNavigator from './StackNavigator'
 import SettingsScreen from '../screens/SettingsScreen'
+import Tabs from './Tabs'
 
 const Drawer = createDrawerNavigator()
 
@@ -26,7 +26,7 @@ const LateralMenu = () => {
       drawerContent={props => <InternalMenu {...props} />}
       drawerType={width > 768 ? 'permanent' : 'front'}
     >
-      <Drawer.Screen name="StackNavigator" component={StackNavigator} />
+      <Drawer.Screen name="Tabs" component={Tabs} />
       <Drawer.Screen name="SettingsScreen" component={SettingsScreen} />
     </Drawer.Navigator>
   )
