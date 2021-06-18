@@ -21,6 +21,9 @@ const Page1Screen: FC<Page1ScreenProps> = ({ navigation }) => {
         title="Page 2"
         onPress={() => navigation.navigate('Page2Screen')}
       />
+      <Text style={{ fontSize: 20, marginVertical: 20 }}>
+        Navigation with Arguments
+      </Text>
       <View style={{ flexDirection: 'row' }}>
         <TouchableOpacity
           onPress={() =>
