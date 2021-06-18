@@ -8,7 +8,7 @@ interface Page1ScreenProps extends StackScreenProps<any, any> {}
 const Page1Screen: FC<Page1ScreenProps> = ({ navigation }) => {
   return (
     <View style={styles.globalMargin}>
-      <Text>Page1Screen</Text>
+      <Text style={styles.title}>Page1Screen</Text>
       <Button
         title="Page 2"
         onPress={() => navigation.navigate('Page2Screen')}
