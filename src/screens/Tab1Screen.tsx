@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect } from 'react'
 import { View, Text } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
-import { styles, colors } from '../theme/appTheme'
+import { styles } from '../theme/appTheme'
 import TouchableIcon from '../components/TouchableIcon'
 
 const Tab1Screen = () => {
