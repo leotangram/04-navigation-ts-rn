@@ -4,6 +4,7 @@ type AuthAction =
   | { type: 'signIn' }
   | { type: 'logout' }
   | { type: 'changeFavoriteIcon'; payload: string }
+  | { type: 'changeUserName'; payload: string }
 
 export const authReducer = (
   state: AuthState,
@@ -24,6 +25,11 @@ export const authReducer = (
       return {
         ...state,
         favoriteIcon: action.payload
+      }
+    case 'changeUserName':
+      return {
+        ...state,
+        userName: action.payload
       }
 
     default:
