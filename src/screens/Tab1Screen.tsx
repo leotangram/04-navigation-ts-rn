@@ -2,8 +2,8 @@ import React from 'react'
 import { useEffect } from 'react'
 import { View, Text } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
-import Icon from 'react-native-vector-icons/Ionicons'
 import { styles, colors } from '../theme/appTheme'
+import TouchableIcon from '../components/TouchableIcon'
 
 const Tab1Screen = () => {
   const { top } = useSafeAreaInsets()
@@ -16,10 +16,10 @@ const Tab1Screen = () => {
     <View style={{ ...styles.globalMargin, marginTop: top + 20 }}>
       <Text style={styles.title}>Icons</Text>
       <Text>
-        <Icon name="airplane-outline" size={80} color={colors.primary} />
-        <Icon name="aperture-outline" size={80} color={colors.primary} />
-        <Icon name="bandage-outline" size={80} color={colors.primary} />
-        <Icon name="balloon-outline" size={80} color={colors.primary} />
+        <TouchableIcon iconName="airplane-outline" />
+        <TouchableIcon iconName="aperture-outline" />
+        <TouchableIcon iconName="bandage-outline" />
+        <TouchableIcon iconName="balloon-outline" />
       </Text>
     </View>
   )
